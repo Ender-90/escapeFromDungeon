@@ -28,4 +28,6 @@ private:
 
     void exitGame();
     void displayFarewell();
+
+    void continueAfterEnterKey();
 };

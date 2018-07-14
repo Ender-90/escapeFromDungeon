@@ -21,8 +21,7 @@ void GameUI::run() {
 
 void GameUI::intro() {
     displayWelcome();
-    while(userInput != ENTER_KEY)
-        userInput = _getch();
+    continueAfterEnterKey();
 }
 
 void GameUI::displayWelcome() {
@@ -56,11 +55,10 @@ void GameUI::runGame() {
 
 void GameUI::help() {
     displayHelp();
-    while(userInput != ENTER_KEY)
-        userInput = _getch();
+    continueAfterEnterKey();
 }
 
-void GameUI::displayHelp(){
+void GameUI::displayHelp() {
     system("cls");
     cout<<"  HELP"<<"\n\n";
     cout<<"You have to get out from maze. First you should find the (K)ey."<<"\n";
@@ -75,15 +73,19 @@ void GameUI::displayHelp(){
     cout<<" Press ENTER to continue...";
 }
 
-void GameUI::exitGame(){
+void GameUI::exitGame() {
     displayFarewell();
-    while(userInput != ENTER_KEY)
-        userInput = _getch();
+    continueAfterEnterKey();
 }
 
-void GameUI::displayFarewell(){
+void GameUI::displayFarewell() {
     system("cls");
     cout<<"\n\n"<<"     Thank You for playing \n      Escape From Dungeon";
     cout<<"\n\n\n"<<"        Created by Ender\n             2018";
     cout<<"\n\n\n\n\n"<<"Press ENTER to continue...";
+}
+
+void GameUI::continueAfterEnterKey() {
+    while(userInput != ENTER_KEY)
+        userInput = _getch();
 }
