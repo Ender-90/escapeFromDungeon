@@ -1,14 +1,17 @@
 #pragma once
+
 #include <vector>
+
+using namespace std;
 
 class Dungeon{
 
-    std::vector <unsigned char> maze;
+    vector<vector<unsigned char>> maze;
 
-    void generateKey(std::vector <unsigned char> &d);
+    void generateKey(vector<vector<unsigned char>> &d);
 
     public:
         Dungeon();
-        std::vector <unsigned char> getDungeon();
-        void clearKey(int pos);
+        vector<vector<unsigned char>> getDungeon();
+        void clearKey(int x, int y);
 };

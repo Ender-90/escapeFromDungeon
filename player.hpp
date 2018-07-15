@@ -1,7 +1,8 @@
 #pragma once
 
 struct Player{
-    int pos;
+    int y;
+    int x;
     bool key;
 
 };

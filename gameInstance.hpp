@@ -10,6 +10,10 @@ using namespace std;
 
 class GameInstance {
 
+public:
+    GameInstance();
+    void run();
+
 private:
     Player p;
     Dungeon dungeon;
@@ -20,18 +24,13 @@ private:
     bool win;
     bool key;
 
-    vector <unsigned char> actualScreen;
+    vector<vector<unsigned char>> actualScreen;
 
     void play();
     void victory();
     void defeat();
-    void updateScreen(Player p, vector <unsigned char> &as, vector <unsigned char> d);
-    void displayActualScreen(vector <unsigned char> d);
-    void moveIfPossible(Player &p, vector <unsigned char> &d, bool &k, int n);
-    void movePlayerOnScreen(int valueToCheck);
-
-public:
-    GameInstance();
-    void run();
-
+    void updateScreen(Player p, vector<vector<unsigned char>> &as, vector<vector<unsigned char>> d);
+    void moveIfPossible(Player &p, vector<vector<unsigned char>> &d, bool &k, int x, int y);
+    void movePlayerOnScreen(int x, int y);
+    void displayActualScreen(vector<vector<unsigned char>> d);
 };
